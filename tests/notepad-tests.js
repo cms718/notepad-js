@@ -26,6 +26,16 @@ function testAddNote() {
   } else console.log("FAIL");
 }
 
+function testAbbreviateNote() {
+  var notepad = new Notepad(); 
+  console.log("Abbreviates note to 20 chars?");
+  notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
+  if (notepad.list()[0] === "This is a programme ..."){
+    console.log("PASS");
+  } else console.log("FAIL");
+}
+
 testDisplayEmptyList();
 testDisplayListOfNotes();
 testAddNote();
+testAbbreviateNote();
