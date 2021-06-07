@@ -1,3 +1,5 @@
 class Notepad {
-
+  list() {
+    return []
+  }
 }
