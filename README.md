@@ -6,7 +6,10 @@ Makers week 7 group project to build a notepad single page application using onl
 
 ```
 As a programmer
-I can see a list of my notes, where each note is abbreviated to the first 20 characters
+I can see a list of my notes,
+
+
+ where each note is abbreviated to the first 20 characters
 So I can find the one I want
 
 As a programmer
