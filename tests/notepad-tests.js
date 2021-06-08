@@ -43,8 +43,21 @@ function testDoesNotAbbreviateNote() {
   } else console.log("FAIL");
 }
 
+function testReturningCompeleteNote() {
+  var notepad = new Notepad();
+  console.log("Returns the complete note from its id");
+  notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
+  if (
+    notepad.findNote(1) ===
+    "This is a programme written by Beca, Charlie and Felix "
+  ) {
+    console.log("PASS");
+  } else console.log("FAIL");
+}
+
 testDisplayEmptyList();
 testDisplayListOfNotes();
 testAddNote();
 testAbbreviateNote();
 testDoesNotAbbreviateNote();
+testReturningCompeleteNote();
