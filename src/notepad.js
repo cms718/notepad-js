@@ -2,8 +2,11 @@ class Notepad {
   constructor() {
     this.notes = [];
   }
-  list() {
-    return this.notes;
+  shortenedNotes() {
+    return this.notes.map((note) => {
+      if (note.length > 20) return `${note.slice(0, 20)}...`;
+      return note;
+    });
   }
 
   addNote(note) {
