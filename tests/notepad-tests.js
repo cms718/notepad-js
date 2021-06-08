@@ -43,13 +43,26 @@ function testDoesNotAbbreviateNote() {
   } else console.log("FAIL");
 }
 
-function testReturningCompeleteNote() {
+function testReturningCompleteNote() {
   var notepad = new Notepad();
-  console.log("Returns the complete note from its id");
+  console.log("Returns the complete note from id 1");
   notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
   if (
     notepad.findNote(1) ===
     "This is a programme written by Beca, Charlie and Felix "
+  ) {
+    console.log("PASS");
+  } else console.log("FAIL");
+}
+
+function testReturningCompleteNote2() {
+  var notepad = new Notepad();
+  console.log("Returns the complete note from id 2");
+  notepad.addNote("Buy eggs");
+  notepad.addNote("Buy milk")
+  if (
+    notepad.findNote(2) ===
+    "Buy milk"
   ) {
     console.log("PASS");
   } else console.log("FAIL");
@@ -60,4 +73,6 @@ testDisplayListOfNotes();
 testAddNote();
 testAbbreviateNote();
 testDoesNotAbbreviateNote();
-testReturningCompeleteNote();
+testReturningCompleteNote();
+testReturningCompleteNote2();
+

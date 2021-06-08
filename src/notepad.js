@@ -12,4 +12,8 @@ class Notepad {
   addNote(note) {
     this.notes.push(note);
   }
+
+  findNote(id) {
+    return this.notes[id - 1]
+  }
 }
