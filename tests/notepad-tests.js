@@ -1,12 +1,25 @@
 "strict";
+expect = (testedProperty) => {
+  return {
+    toEqual: (assertion) => {
+      if (testedProperty === assertion) {
+        console.log("Pass");
+      } else {
+        console.log("Fail");
+      }
+    },
+  };
+};
 
-function testDisplayEmptyList() {
+it = (testMessage, callback) => {
+  console.log(testMessage);
+  callback();
+};
+
+it("starts as an empty array", () => {
   var notepad = new Notepad();
-  console.log("Starts empty?");
-  if (notepad.shortenedNotes().length === 0) {
-    console.log("PASS");
-  } else console.log("FAIL");
-}
+  expect(notepad.shortenedNotes().length).toEqual(0);
+});
 
 function testDisplayListOfNotes() {
   var notepad = new Notepad();
@@ -59,11 +72,8 @@ function testReturningCompleteNote2() {
   var notepad = new Notepad();
   console.log("Returns the complete note from id 2");
   notepad.addNote("Buy eggs");
-  notepad.addNote("Buy milk")
-  if (
-    notepad.findNote(2) ===
-    "Buy milk"
-  ) {
+  notepad.addNote("Buy milk");
+  if (notepad.findNote(2) === "Buy milk") {
     console.log("PASS");
   } else console.log("FAIL");
 }
@@ -75,4 +85,3 @@ testAbbreviateNote();
 testDoesNotAbbreviateNote();
 testReturningCompleteNote();
 testReturningCompleteNote2();
-
