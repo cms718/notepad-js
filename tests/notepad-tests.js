@@ -17,73 +17,26 @@ it = (testMessage, callback) => {
   callback(notepad);
 };
 
-it("starts as an empty array", (notepad) => {
+it("Starts as an empty array", (notepad) => {
   expect(notepad.shortenedNotes().length).toEqual(0);
 });
 
+it("Adds a note to list", (notepad) => {
+  notepad.addNote("first note");
+  expect(notepad.shortenedNotes()[0]).toEqual("first note")
+})
 
+it("Abbreviates long notes to 20 chars", (notepad) => {
+  notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
+  expect(notepad.shortenedNotes()[0]).toEqual("This is a programme ...")
+})
 
-// function testDisplayListOfNotes() {
-//   var notepad = new Notepad();
-//   console.log("Displays list?");
-//   notepad.addNote("first note");
-//   if (notepad.notes[0] === "first note") {
-//     console.log("PASS");
-//   } else console.log("FAIL");
-// }
+it("Returns a complete note from id", (notepad) => {
+  notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
+  notepad.addNote("Buy eggs");
+  notepad.addNote("Buy milk");
+  expect(notepad.findNote(1)).toEqual("This is a programme written by Beca, Charlie and Felix ")
+  expect(notepad.findNote(2)).toEqual("Buy eggs")
+  expect(notepad.findNote(3)).toEqual("Buy milk")
+})
 
-// function testAddNote() {
-//   var notepad = new Notepad();
-//   console.log("Adds a new note?");
-//   notepad.addNote("first note");
-//   if (notepad.shortenedNotes()[0] === "first note") {
-//     console.log("PASS");
-//   } else console.log("FAIL");
-// }
-
-// function testAbbreviateNote() {
-//   var notepad = new Notepad();
-//   console.log("Abbreviates note to 20 chars?");
-//   notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
-//   if (notepad.shortenedNotes()[0] === "This is a programme ...") {
-//     console.log("PASS");
-//   } else console.log("FAIL");
-// }
-// function testDoesNotAbbreviateNote() {
-//   var notepad = new Notepad();
-//   console.log("Doesn't abbreviate note less than 20 chars?");
-//   notepad.addNote("Hello");
-//   if (notepad.shortenedNotes()[0] === "Hello") {
-//     console.log("PASS");
-//   } else console.log("FAIL");
-// }
-
-// function testReturningCompleteNote() {
-//   var notepad = new Notepad();
-//   console.log("Returns the complete note from id 1");
-//   notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
-//   if (
-//     notepad.findNote(1) ===
-//     "This is a programme written by Beca, Charlie and Felix "
-//   ) {
-//     console.log("PASS");
-//   } else console.log("FAIL");
-// }
-
-// function testReturningCompleteNote2() {
-//   var notepad = new Notepad();
-//   console.log("Returns the complete note from id 2");
-//   notepad.addNote("Buy eggs");
-//   notepad.addNote("Buy milk");
-//   if (notepad.findNote(2) === "Buy milk") {
-//     console.log("PASS");
-//   } else console.log("FAIL");
-// }
-
-// testDisplayEmptyList();
-// testDisplayListOfNotes();
-// testAddNote();
-// testAbbreviateNote();
-// testDoesNotAbbreviateNote();
-// testReturningCompleteNote();
-// testReturningCompleteNote2();
