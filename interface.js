@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let notes = notepad.shortenedNotes();
     let ul = document.getElementById("list");
     ul.innerHTML = "";
-    notes.forEach((note) => {
+    notes.forEach((note, index) => {
       let li = document.createElement("li");
       let a = document.createElement("a")
-      a.href = "http://www.google.com"
+      a.href = `#${index}`
       li.appendChild(a).innerHTML = note;
       ul.appendChild(li);
     });
