@@ -13,9 +13,24 @@ document.addEventListener("DOMContentLoaded", () => {
     ul.innerHTML = "";
     notes.forEach((note) => {
       let li = document.createElement("li");
-      li.appendChild(document.createTextNode(note));
+      let a = document.createElement("a")
+      a.href = "http://www.google.com"
+      li.appendChild(a).innerHTML = note;
       ul.appendChild(li);
     });
   };
+
+
+
+
   getNotes();
 });
+
+/*
+
+Create an anchor tag
+
+create hyperlink
+create event listener
+call findnote with ID 
+*/
