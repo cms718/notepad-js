@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     getNotes();
   });
 
+  
+  
+
   getNotes = () => {
     let notes = notepad.shortenedNotes();
     let ul = document.getElementById("list");
@@ -15,11 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
       let li = document.createElement("li");
       let a = document.createElement("a")
       a.href = `#${index}`
+      a.addEventListener("click", () => {
+        console.log(getIdFromNote())
+      })
       li.appendChild(a).innerHTML = note;
       ul.appendChild(li);
     });
   };
 
+  getIdFromNote = () => {
+    return window.location.hash
+  }
 
 
 
