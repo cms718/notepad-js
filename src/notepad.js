@@ -14,6 +14,6 @@ class Notepad {
   }
 
   findNote(id) {
-    return this.notes[id]
+    return this.notes[id];
   }
 }

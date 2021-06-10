@@ -7,32 +7,22 @@ document.addEventListener("DOMContentLoaded", () => {
     getNotes();
   });
 
-  
-  
-
   getNotes = () => {
     let notes = notepad.shortenedNotes();
     let ul = document.getElementById("list");
     ul.innerHTML = "";
     notes.forEach((note, index) => {
       let li = document.createElement("li");
-      let a = document.createElement("a")
-      a.href = `#${index}`
+      let a = document.createElement("a");
+      a.href = `#${index}`;
       a.addEventListener("click", () => {
-        console.log(getIdFromNote())
-      })
+        let completeNote = notepad.findNote(index);
+        document.getElementById("full-note").innerText = completeNote;
+      });
       li.appendChild(a).innerHTML = note;
       ul.appendChild(li);
     });
   };
-
-  getIdFromNote = () => {
-    return window.location.hash
-  }
-
-
-
-  getNotes();
 });
 
 /*
