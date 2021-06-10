@@ -18,9 +18,9 @@ it("Returns a complete note from id", (notepad) => {
   notepad.addNote("This is a programme written by Beca, Charlie and Felix ");
   notepad.addNote("Buy eggs");
   notepad.addNote("Buy milk");
-  expect(notepad.findNote(1)).toEqual(
+  expect(notepad.findNote(0)).toEqual(
     "This is a programme written by Beca, Charlie and Felix "
   );
-  expect(notepad.findNote(2)).toEqual("Buy eggs");
-  expect(notepad.findNote(3)).toEqual("Buy milk");
+  expect(notepad.findNote(1)).toEqual("Buy eggs");
+  expect(notepad.findNote(2)).toEqual("Buy milk");
 });
